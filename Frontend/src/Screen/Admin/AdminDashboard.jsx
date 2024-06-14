@@ -2,7 +2,7 @@ import { Grid, Paper, Typography, Box, useMediaQuery, useTheme } from '@mui/mate
 import { BsArrowDownLeft, BsArrowDownRight, BsArrowUpRight } from 'react-icons/bs';
 import { MdAttachMoney, MdPeopleOutline, MdSchool } from 'react-icons/md';
 import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer } from 'recharts';
-import { Table, TableContainer, TableHead, TableRow, TableCell, TableBody } from '@mui/material';
+
 
 // Sample Data for the Chart
 const studentChartData = [
