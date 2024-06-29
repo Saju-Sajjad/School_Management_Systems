@@ -3,10 +3,9 @@ import mongoose from 'mongoose';
 import cors from 'cors';
 import userRoutes from './routes/userRoutes.js';
 import authRoutes from './routes/authRoutes.js';
-import taskRoutes from './routes/taskRoutes.js';
 import { fileURLToPath } from 'url';
 import cookieParser from 'cookie-parser';
-import path, { dirname } from 'path'; // Import dirname here
+import path, { dirname } from 'path';
 import dotenv from 'dotenv';
 
 dotenv.config();
@@ -16,19 +15,21 @@ app.use(express.json());
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 
-// Enable CORS
-app.use(cors({ credentials: true, origin: "https://your-task-web.vercel.app" }));
+// Enable CORS with specific origin
+app.use(cors({
+  credentials: true,
+  origin: 'http://localhost:5173'
+}));
 
 app.use(cookieParser());
-app.use('/api/users', userRoutes); // User routes
-app.use('/api/auth', authRoutes); // Authentication routes
-app.use('/api/tasks', taskRoutes); // Task routes
+app.use('/api/users', userRoutes);
+app.use('/api/auth', authRoutes);
 app.use('/uploads', express.static(path.join(__dirname, 'uploads')));
 
 mongoose.connect(process.env.MONGODB_URI, {
   useNewUrlParser: true,
   useUnifiedTopology: true,
-  dbName: 'userAuth' // Replace <database-name> with your actual database name
+  dbName: 'userAuth'
 }).then(() => {
   console.log('Connected to MongoDB');
 }).catch((error) => {

@@ -25,7 +25,7 @@ const MainLayout = () => {
           component="main"
           sx={{
             flexGrow: 1,
-            bgcolor: 'background.default',
+            bgcolor: '#f5f5f5', // Set the background color here
             p: 3,
             transition: 'margin-left 0.3s ease',
             marginLeft: { xs: 0, md: sidebarOpen ? '300px' : '0' }

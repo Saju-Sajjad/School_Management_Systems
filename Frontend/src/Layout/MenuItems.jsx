@@ -18,3 +18,23 @@ export const renderMenuItems = (items, handleClose) =>
       {item.label}
     </MenuItem>
   ));
+
+  export const classes = [
+    { value: 'Class A', label: 'Class A' },
+    { value: 'Class B', label: 'Class B' },
+    { value: 'Class C', label: 'Class C' },
+    { value: 'Class D', label: 'Class D' },
+    { value: 'Class E', label: 'Class E' },
+  ];
+
+  export const bloodGroups = [
+    { value: 'A+', label: 'A+' },
+    { value: 'A-', label: 'A-' },
+    { value: 'B+', label: 'B+' },
+    { value: 'B-', label: 'B-' },
+    { value: 'AB+', label: 'AB+' },
+    { value: 'AB-', label: 'AB-' },
+    { value: 'O+', label: 'O+' },
+    { value: 'O-', label: 'O-' },
+  ];
+  

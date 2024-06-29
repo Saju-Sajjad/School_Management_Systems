@@ -10,7 +10,7 @@ import {
 } from "@mui/icons-material";
 
 const MenuData = [
-  { label: "Dashboard", icon: <Home />, path: "/admin/dashboard" },
+  { label: "Dashboard", icon: <Home />, path: "/" },
   {
     label: "Admission Management",
     icon: <SupervisorAccount />,

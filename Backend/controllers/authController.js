@@ -11,8 +11,7 @@ const ACCESS_TOKEN_EXPIRATION = '24h';
 const REFRESH_TOKEN_EXPIRATION = '7d';
 
 export const signup = async (req, res, next) => {
-  const { name, email, password } = req.body;
-  const avatar = req.file;
+  const { name, email, password, schoolName } = req.body;
 
   try {
     let existingUser = await User.findOne({ email });
@@ -26,7 +25,7 @@ export const signup = async (req, res, next) => {
       name,
       email,
       password: hashPassword,
-      avatar: avatar ? avatar.path : null,
+      schoolName,
       isAdmin: false
     });
 
